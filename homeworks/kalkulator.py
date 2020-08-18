@@ -24,16 +24,21 @@ while True:
         num1 = float(input("Podaj pierwszą liczbę: "))
         num2 = float(input("Podaj drugą liczbę: "))
 
-            if choice ='1': print(add['num1','num2'])
+        if choice =='1':
+            print(add(num1,num2))
+            # albo ładniej
+            # print(num1, "+", num2, "=", add(num1, num2))
 
-            elif choise = '2': print(substract['num1', 'num2'])
+        elif choise = '2': 
+            print(substract['num1', 'num2'])
 
-            elif choise = '3': print(multiply['num1', 'num2'])
+        elif choise = '3': 
+            print(multiply['num1', 'num2'])
 
-            elif choise = '4': print(divide['num1', 'num2'])
+        elif choise = '4': 
+            print(divide['num1', 'num2'])
 
-            break:
+        break
 
-
-
-else: print("Błędna wartość, podaj poprawną")
+    else: 
+        print("Błędna wartość, podaj poprawną")
