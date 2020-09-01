@@ -18,6 +18,8 @@ actions.move_to_element(element).perform()
 
 time.sleep(3)
 
-driver.get_screenshot_as_file('moj_instruktor.png')
+#driver.get_screenshot_as_file('moj_instruktor.png')
+
+driver.save_screenshot('/Users/Arek/Documents/moj_instruktor.png')
 
 driver.quit()
