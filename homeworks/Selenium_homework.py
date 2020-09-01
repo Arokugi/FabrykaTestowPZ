@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
 
-driver = webdriver.Chrome('/Users/Arek/PycharmProjects/kurs_taps_windows/chromedriver.exe')
+driver = webdriver.Chrome()
 
 driver.get('https://fabrykatestow.pl')
 
@@ -20,6 +20,6 @@ time.sleep(3)
 
 #driver.get_screenshot_as_file('moj_instruktor.png')
 
-driver.save_screenshot('/Users/Arek/Documents/moj_instruktor.png')
+driver.save_screenshot('moj_instruktor.png')
 
 driver.quit()
