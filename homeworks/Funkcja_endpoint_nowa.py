@@ -2,14 +2,13 @@
 import requests
 from datetime import datetime
 import time
-
 from selenium.common.exceptions import TimeoutException
 
 
 def exchange_rate_checker():
     try:
         d = datetime.now()
-        request = requests.get('http://api.nbp.pl/api/exchangerates/rates/a/eur/today')
+        request = requests.get('https://api.exchangeratesapi.io/latest')
         rate = request.json()
         print(rate['rates'])
         print('Data i godzina: ', d.year, '.', d.month, '.', d.day, d.hour, ':', d.minute, ':', d.second)
