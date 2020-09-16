@@ -1,0 +1,375 @@
+{
+	"info": {
+		"_postman_id": "7e7a0030-cd0c-45bd-b944-4b882caa33f5",
+		"name": "Homework",
+		"description": "Testy w ramach zadania domowego FT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test_1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ccd19046-e7c7-46c3-8377-225c829882e4",
+						"exec": [
+							"console.log(pm.environment.get(\"post\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.value).to.eql(100);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "53aa5117-9970-4546-8ff8-5fbd57fab7a9",
+						"exec": [
+							"console.log (\"Test GET dla wszystkich postów\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/posts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts"
+					]
+				},
+				"description": "GET dla /posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a1905c4-7029-4168-abe2-00286b19c6a2",
+						"exec": [
+							"console.log(pm.environment.get(\"id\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"sunt\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "47266e21-afa8-4ec8-8d23-23829062b8ac",
+						"exec": [
+							"console.log (\"Test GET dla id = 1\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/?id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "GET na post=1"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "29be3353-3a34-4fb8-9dbe-ee660c3b5a9f",
+						"exec": [
+							"console.log(pm.environment.get(\"id\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"labore\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4900dec5-d2b2-400a-8aa4-5f91978df57f",
+						"exec": [
+							"console.log (\"Test GET dla id = 100\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/?id=100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "100"
+						}
+					]
+				},
+				"description": "GET na post = 100"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cd6798fc-af1e-4765-a212-052a038720d6",
+						"exec": [
+							"console.log(pm.environment.get(\"id\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"sunt\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"labore\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e73b5445-9324-4758-9620-0de28fff7c4f",
+						"exec": [
+							"console.log (\"Test GET dla id = 1 oraz id = 100\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/?id=1&id=100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "id",
+							"value": "100"
+						}
+					]
+				},
+				"description": "GET na id  = 1, 100"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_5",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6f78efa7-cd62-4518-a318-fdbe7dbce221",
+						"exec": [
+							"console.log (\"Test POST id = 101\")"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "afabc587-7c3d-4491-922d-e27194294a95",
+						"exec": [
+							"pm.globals.set(\"id\", \"101\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n        \"userId\": 10,\r\n        \"id\": 101,\r\n        \"title\": \"at et nam consequatur ea labore ea harum\",\r\n        \"body\": \"cupiditate quo est est est a modi nesciunt soluta\\nipsa voluptas error itaque dicta in\\nautem qui minus magnam et distinctio eum\\naccusamus ratione error aut\"\r\n    }\r\n]\r\n"
+				},
+				"url": {
+					"raw": "{{url}}/posts",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test_6",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ee8d41bf-8b9e-404a-ab01-cacabb860c99",
+						"exec": [
+							"console.log (\"Test PUT dla id = 101 zmieniamy na id = 111\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n        \"userId\": 10,\r\n        \"id\": 111,\r\n        \"title\": \"at et nam consequatur ea labore ea harum\",\r\n        \"body\": \"cupiditate quo est est est a modi nesciunt soluta\\nipsa voluptas error itaque dicta in\\nautem qui minus magnam et distinctio eum\\naccusamus ratione error aut\"\r\n    }\r\n]\r\n"
+				},
+				"url": {
+					"raw": "{{url}}/posts/100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						"100"
+					]
+				},
+				"description": "Put id = 111 instead of id = 100"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_7",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6662ecc6-5006-4c63-8d0c-b30bff71d184",
+						"exec": [
+							"console.log (\"Test DELETE dla id = 100\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/posts/100",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"posts",
+						"100"
+					]
+				},
+				"description": "Delete id = 100"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "09f30df3-ff78-4a96-b2c2-7d8b6704c74d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f2745b1f-1c4f-40ed-abe4-ab0b81a9e947",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
