@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "2bfa61b3-8d57-40de-abc4-a86a7b6dd1a4",
+		"name": "Homework 2",
+		"description": "Testy w ramach zadania domowego FT - comments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test_8",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9816f2f7-6f7b-4337-9659-6580d245dd6d",
+						"exec": [
+							"console.log(pm.environment.get(\"post\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"maiores\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e4be883a-142c-4e8f-a6a6-ac7fb745c756",
+						"exec": [
+							"console.log (\"Test GET dla wszystkich messages\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/comments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "web_1",
+							"value": "https://jsonplaceholder.typicode.com",
+							"description": "Pierwsza strona www",
+							"disabled": true
+						}
+					]
+				},
+				"description": "GET dla /posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_9",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "14ffd135-76a3-4f81-8e97-1baf27919b46",
+						"exec": [
+							"console.log(pm.environment.get(\"id\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"gardner.biz\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1b4e9dde-d03d-4e41-83bd-98c4f09931a6",
+						"exec": [
+							"console.log (\"Test GET dla id = 1\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/comments?id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "GET na post=1"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_10",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee5f8f07-0186-43e7-919a-a09cb894f092",
+						"exec": [
+							"console.log(pm.environment.get(\"id\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Emma@\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "41c9a95a-561a-4ab2-8c68-65096783d776",
+						"exec": [
+							"console.log (\"Test GET dla id = 500\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/comments?id=500",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "500"
+						}
+					]
+				},
+				"description": "GET na post = 100"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_11",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a899675c-1b72-4b4a-a05b-7c8daef23026",
+						"exec": [
+							"console.log(pm.environment.get(\"id\"));\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"gardner.biz\");\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Emma@\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d106e1d6-f911-44f1-b37a-a993f6f071d0",
+						"exec": [
+							"console.log (\"Test GET dla id = 1 i id = 500\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/comments?id=1&id=500",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "id",
+							"value": "500"
+						}
+					]
+				},
+				"description": "GET na id  = 1, 100"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_12",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "ddd3d341-d664-40c7-900e-9746e80e68b6",
+						"exec": [
+							"console.log (\"Test POST dla wszystkich commentsow, dodajemy dodatkowy comment id = 501\")"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5b13096-38cf-41db-acdd-a6bb9bc9446f",
+						"exec": [
+							"pm.globals.set(\"id\", \"501\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postId\": 100,\r\n    \"id\": 501,\r\n    \"name\": \"ex eaque eum natus\",\r\n    \"email\": \"yogi@onet.pl\",\r\n    \"body\": \"perspiciatis quis doloremque\\nveniam nisi eos velit sed\\nid totam inventore voluptatem laborum et eveniet\\naut aut aut maxime quia temporibus ut omnis\"\r\n  }"
+				},
+				"url": {
+					"raw": "{{url}}/comments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test_13",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4e15a5bb-4c3f-4578-b981-e9ee2ef5a7ed",
+						"exec": [
+							"console.log (\"Test PUT dla id = 500 zmieniamy na id = 555\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n{\r\n    \"postId\": 100,\r\n    \"id\": 555,\r\n    \"name\": \"ex eaque eum natus\",\r\n    \"email\": \"rambo@hollywood.ca\",\r\n    \"body\": \"perspiciatis quis doloremque\\nveniam nisi eos velit sed\\nid totam inventore voluptatem laborum et eveniet\\naut aut aut maxime quia temporibus ut omnis\"\r\n  }\r\n]\r\n"
+				},
+				"url": {
+					"raw": "{{url}}/comments/500",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments",
+						"500"
+					]
+				},
+				"description": "Put id = 111 instead of id = 100"
+			},
+			"response": []
+		},
+		{
+			"name": "Test_7",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4377109b-4bb4-443f-ba53-9e1bbdf315d9",
+						"exec": [
+							"console.log (\"Test DELETE dla id = 500\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/comments/500",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"comments",
+						"500"
+					]
+				},
+				"description": "Delete id = 100"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e1e17d7c-ae83-4e2b-aec3-42bcc5ec7132",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6b56491b-e9fa-4627-92bb-09918dd1fee8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
